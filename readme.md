@@ -1,56 +1,53 @@
 # Random Name Generator App
 
-> **A React Native app built with Expo that generates random names based on categories, gender, and race.**  
-> Users can save their favorite names and explore different name combinations. Designed for a school project in the **Apputveckling F23** course.
+> **En React Native-app byggd med Expo som genererar slumpmässiga namn baserat på kategorier, kön och ras.**  
+> Användare kan spara sina favoritnamn och utforska olika namnkombinationer. Designad för ett skolprojekt i kursen **Apputveckling F23**.
 
 ---
 
-## 📱 Features
+## 📱 Funktioner
 
-- **Category Selection:** Choose between `Fantasy`, `Sci-fi`, `Egyptian`, or `Norse` categories.
-- **Gender and Race Options:** Narrow down names by selecting gender (`Male`, `Female`) and race (e.g., `Elf`, `Cyborg`, `Jotnar`).
-- **Favorites List:** Save your favorite names to view later.
-- **Random Name Generation:** Generate unique names with no duplicates in each session.
-- **Local JSON Data:** The app uses a local API-like JSON file for name data.
+- **Kategorival:** Välj mellan `Fantasy`, `Sci-fi`, `Egyptian` eller `Norse` kategorier.
+- **Kön och ras-alternativ:** Begränsa namnen genom att välja kön (`Man`, `Kvinna`) och ras (t.ex. `Alv`, `Cyborg`, `Jotnar`).
+- **Favoritlista:** Spara dina favoritnamn för att se senare.
+- **Slumpmässig namngenerering:** Generera unika namn utan dubbletter i varje session.
+- **Lokal JSON-data:** Appen använder en lokal API-liknande JSON-fil för namnuppgifter.
 
 ---
 
 ## 🚀 Installation & Setup
 
-1. **Clone the Repository**  
+1. **Klona Repositoriet**  
    ```bash
    git clone <repository-url>
    cd RNG
    ```
 
-2. **Install Dependencies**  
+2. **Installera beroenden**  
    ```bash
    npm install
    ```
 
-3. **Start the Development Server**  
+3. **Starta utvecklingsservern**  
    ```bash
    npx expo start
    ```
 
-4. **Run on Your Device**  
-   - Use the Expo Go app to scan the QR code or run the app on an emulator.
+4. **Kör på din enhet**  
+   - Använd Expo Go-appen för att skanna QR-koden eller kör appen i en emulator.
 
 ---
 
+## 🛠️ Teknikstack
 
-## 🛠️ Techstack
-
-- **React Native**: Framework for building mobile applications.
-- **Expo**: Toolchain for React Native apps.
-- **TypeScript**: Static type checking.
-
+- **React Native:** Ramverk för att bygga mobilapplikationer.
+- **Expo:** Verktygskedja för React Native-appar.
+- **TypeScript:** Statisk typkontroll.
 
 ---
 
-### ⭐ Future Improvements
+### ⭐ Framtida Förbättringar
 
-- Integrate with a real backend or a public API.
-- Add more categories, genders, and races.
-- Include animations or transitions for a more polished user experience.
-
+- Integrera med en riktig backend eller ett publikt API.
+- Lägg till fler kategorier, kön och raser.
+- Inkludera animationer eller övergångar för en mer polerad användarupplevelse.
