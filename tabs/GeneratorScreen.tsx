@@ -1,11 +1,26 @@
 import React, { useState } from 'react';
 import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native';
+import { RouteProp } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useFavorites } from '../context/FavoritesContext';
 
-type Props = {
-  route: { params: { category: string } };
+type RootStackParamList = {
+  Generator: { category: string };
+  Favorites: undefined;
 };
 
-const GeneratorScreen: React.FC<Props> = ({ route }) => {
+type GeneratorScreenRouteProp = RouteProp<RootStackParamList, 'Generator'>;
+type GeneratorScreenNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'Generator'
+>;
+
+type Props = {
+  route: GeneratorScreenRouteProp;
+  navigation: GeneratorScreenNavigationProp;
+};
+
+const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
   const { category } = route.params;
 
   const [names, setNames] = useState<{ name: string; isFavorite: boolean }[]>([]);
