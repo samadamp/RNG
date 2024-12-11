@@ -1,36 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, FlatList, Pressable, StyleSheet } from 'react-native';
+import { useFavorites } from '../context/FavContext';
 
 type FavScreenProps = {};
 
 const FavScreen: React.FC<FavScreenProps> = () => {
-  // Mockad lista över favoritnamn
-  const [favorites, setFavorites] = useState<string[]>([
-    'Elanor',
-    'Thor',
-    'Nova',
-  ]);
-
-  const removeFavorite = (name: string) => {
-    setFavorites(favorites.filter((item) => item !== name));
-  };
+  const { favorites, removeFavorite } = useFavorites(); // Använd global Context
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Your Favorites</Text>
+      <Text style={styles.title}>Favs ❤️</Text>
 
       {favorites.length === 0 ? (
         <Text style={styles.noFavoritesText}>No favorites added yet!</Text>
       ) : (
         <FlatList
           data={favorites}
-          keyExtractor={(item) => item}
+          keyExtractor={(item) => item.name}
           renderItem={({ item }) => (
             <View style={styles.favoriteItem}>
-              <Text style={styles.favoriteName}>{item}</Text>
+              <Text style={styles.favoriteName}>{item.name}</Text>
               <Pressable
                 style={styles.removeButton}
-                onPress={() => removeFavorite(item)}
+                onPress={() => removeFavorite(item.name)}
               >
                 <Text style={styles.removeButtonText}>Remove</Text>
               </Pressable>
@@ -54,7 +46,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    color: '#000',
+    color: '#e63946',
   },
   noFavoritesText: {
     fontSize: 16,

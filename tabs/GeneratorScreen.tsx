@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { useFavorites } from '../context/FavoritesContext';
+import { useFavorites } from '../context/FavContext';
+import namesData from '../data/names.json'; // Direct import of JSON
 
 type RootStackParamList = {
   Generator: { category: string };
@@ -23,25 +24,55 @@ type Props = {
 const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
   const { category } = route.params;
 
+  const { addFavorite, removeFavorite, favorites } = useFavorites();
+
   const [names, setNames] = useState<{ name: string; isFavorite: boolean }[]>([]);
-  const [allNames] = useState<Record<string, string[]>>({
-    Fantasy: ['Findolin Magthar', 'Soraka Lightbane', 'Tauriel Urd-ál', 'Elandir Frostbane'],
-    'Sci-fi': ['Xerion Pulse', 'Nova Striker', 'Orion Zeta', 'Lyra Stardust'],
-    Egyptian: ['Nefertari', 'Anubis Rex', 'Osiris Khufu', 'Ramses the Brave'],
-    Norse: ['Thorvald Bjornson', 'Freya Skald', 'Loki Windrider', 'Odin the Wise'],
-  });
+  const [allNames, setAllNames] = useState<
+    Record<string, Record<string, Record<string, string[]>>>
+  >({});
+  const [gender, setGender] = useState<'Male' | 'Female'>('Male');
+  const [race, setRace] = useState<
+    'Human' | 'Elf' | 'Dwarf' | 'Cyborg' | 'Alien' | 'Nubian' | 'Sobek' | 'Trolls' | 'Jotnar'
+  >('Human');
+  const [generatedNames, setGeneratedNames] = useState<Set<string>>(new Set());
+
+  useEffect(() => {
+    setAllNames(namesData);
+  }, []);
 
   const generateRandomName = () => {
-    const availableNames = allNames[category] || ['Unnamed'];
-    const randomName = availableNames[Math.floor(Math.random() * availableNames.length)];
+    const availableNames = allNames[category]?.[race]?.[gender] || [];
+    const remainingNames = availableNames.filter((name) => !generatedNames.has(name));
 
-    // Lägg bara till namnet om det inte redan finns i listan
-    if (!names.some((n) => n.name === randomName)) {
-      setNames((prev) => [...prev, { name: randomName, isFavorite: false }]);
+    if (remainingNames.length === 0) {
+      console.warn('All names have been generated for this combination.');
+      return;
     }
+
+    const randomName =
+      remainingNames[Math.floor(Math.random() * remainingNames.length)];
+
+    // Add the name to the generated names set
+    setGeneratedNames((prev) => new Set(prev).add(randomName));
+
+    // Add the name to the displayed list, maintaining a max of 6 names
+    setNames((prev) => {
+      if (prev.length >= 6) {
+        return [...prev.slice(1), { name: randomName, isFavorite: false }];
+      }
+      return [...prev, { name: randomName, isFavorite: false }];
+    });
   };
 
   const toggleFavorite = (name: string) => {
+    const isCurrentlyFavorite = favorites.some((fav) => fav.name === name);
+
+    if (isCurrentlyFavorite) {
+      removeFavorite(name);
+    } else {
+      addFavorite(name);
+    }
+
     setNames((prev) =>
       prev.map((n) =>
         n.name === name ? { ...n, isFavorite: !n.isFavorite } : n
@@ -53,6 +84,72 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
     <View style={styles.container}>
       <Text style={styles.title}>{category}</Text>
 
+      {/* Gender Selector */}
+      <View style={styles.genderSelector}>
+        <Pressable
+          style={[
+            styles.genderButton,
+            gender === 'Male' && styles.selectedGenderButton,
+          ]}
+          onPress={() => setGender('Male')}
+        >
+          <Text
+            style={[
+              styles.genderText,
+              gender === 'Male' && styles.selectedGenderText,
+            ]}
+          >
+            Male
+          </Text>
+        </Pressable>
+        <Pressable
+          style={[
+            styles.genderButton,
+            gender === 'Female' && styles.selectedGenderButton,
+          ]}
+          onPress={() => setGender('Female')}
+        >
+          <Text
+            style={[
+              styles.genderText,
+              gender === 'Female' && styles.selectedGenderText,
+            ]}
+          >
+            Female
+          </Text>
+        </Pressable>
+      </View>
+
+      {/* Race Selector */}
+      <View style={styles.raceSelector}>
+        {[
+          'Human',
+          ...(category === 'Fantasy' ? ['Elf', 'Dwarf'] :
+            category === 'Sci-fi' ? ['Cyborg', 'Alien'] :
+            category === 'Egyptian' ? ['Nubian', 'Sobek'] :
+            category === 'Norse' ? ['Trolls', 'Jotnar'] : []),
+        ].map((r) => (
+          <Pressable
+            key={r}
+            style={[
+              styles.raceButton,
+              race === r && styles.selectedRaceButton,
+            ]}
+            onPress={() => setRace(r as typeof race)}
+          >
+            <Text
+              style={[
+                styles.raceText,
+                race === r && styles.selectedRaceText,
+              ]}
+            >
+              {r}
+            </Text>
+          </Pressable>
+        ))}
+      </View>
+
+      {/* Name List */}
       <View style={styles.nameListContainer}>
         <FlatList
           data={names}
@@ -67,7 +164,12 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
                   pressed && { opacity: 0.5 },
                 ]}
               >
-                <Text style={[styles.heartText, item.isFavorite && styles.filledHeart]}>
+                <Text
+                  style={[
+                    styles.heartText,
+                    item.isFavorite && styles.filledHeart,
+                  ]}
+                >
                   {item.isFavorite ? '❤️' : '🤍'}
                 </Text>
               </Pressable>
@@ -96,6 +198,55 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 20,
     color: '#000',
+  },
+  genderSelector: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  genderButton: {
+    backgroundColor: '#eef5ff',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginHorizontal: 10,
+  },
+  selectedGenderButton: {
+    backgroundColor: '#cce7ff',
+  },
+  genderText: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#000',
+  },
+  selectedGenderText: {
+    color: '#0056b3',
+    fontWeight: '700',
+  },
+  raceSelector: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginVertical: 10,
+  },
+  raceButton: {
+    backgroundColor: '#eef5ff',
+    borderRadius: 10,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    marginHorizontal: 5,
+    marginVertical: 5,
+  },
+  selectedRaceButton: {
+    backgroundColor: '#cce7ff',
+  },
+  raceText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#000',
+  },
+  selectedRaceText: {
+    color: '#0056b3',
+    fontWeight: '700',
   },
   nameListContainer: {
     backgroundColor: '#eef5ff',

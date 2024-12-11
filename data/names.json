@@ -1,0 +1,199 @@
+{
+    "Fantasy": {
+      "Human": {
+        "Male": [
+          "Arthas Lightbringer", "Garen Crownguard", "Duncan Ironshield", "Beric Sunwalker",
+          "Cedric Flamebearer", "Rowan Frostblade", "Godric Moonshadow", "Thane Fireheart",
+          "Victor Starcaster", "Darian Stormbringer", "Eldon Brightblade", "Kael Frostbane",
+          "Ragnar Starborn", "Theron Stormcaster", "Cedrik Moonshard", "Talon Firebringer",
+          "Draven Flamewarden", "Erik Nightwatcher", "Alaric Moonveil", "Fendral Starforge"
+        ],
+        "Female": [
+          "Luna Brightblade", "Isolde Sunfire", "Freya Dawnwhisper", "Celia Frostpetal",
+          "Elaine Stormchime", "Morgana Nightcaster", "Selena Skybreeze", "Talia Moonpetal",
+          "Anya Flamewarden", "Lyra Lightweaver", "Ellara Brightstar", "Aria Starcaster",
+          "Kaela Firebloom", "Aveline Nightdancer", "Thalia Frostcaster", "Cerys Flamewarden",
+          "Vera Frostveil", "Serena Sunwhisper", "Faylen Starweaver", "Elira Moonshadow"
+        ]
+      },
+      "Elf": {
+        "Male": [
+          "Thalion Windwhisper", "Kaelith Moondancer", "Eryndor Duskblade", "Sylvar Starleaf",
+          "Lorcan Moonbow", "Fendral Nightshade", "Calion Frostfeather", "Raviel Brightwood",
+          "Valinor Sunshadow", "Galathar Greenleaf", "Eryndor Mistwalker", "Teren Starseer",
+          "Faelar Moonflame", "Kaelith Frostbane", "Sylvian Dawnwhisper", "Nymor Shadowcaster",
+          "Elluin Sunblaze", "Felar Brightbreeze", "Therandir Frostleaf", "Calath Moonshadow"
+        ],
+        "Female": [
+          "Aeloria Whisperwind", "Sylvara Lightbloom", "Nyris Starbreeze", "Lunara Dawnshadow",
+          "Faylinn Frostpetal", "Althaea Brightfeather", "Myrra Moonweaver", "Elowen Skydancer",
+          "Cassiel Starwhisper", "Seren Frostflame", "Theris Moonveil", "Iris Starcaster",
+          "Faylen Nightblossom", "Selara Frostveil", "Elaria Sunweaver", "Nira Dawnbringer",
+          "Aralyn Frostshade", "Sylra Brightpetal", "Ceryn Nightcaster", "Faelith Sunshadow"
+        ]
+      },
+      "Dwarf": {
+        "Male": [
+          "Thorin Oakenshield", "Dain Ironfoot", "Borin Firebeard", "Grimnir Stonebreaker",
+          "Bofur Stormhammer", "Durin Frostfist", "Kharag Starforge", "Mordain Flamekeeper",
+          "Ogran Thunderstrike", "Rurik Ironclad", "Thargrim Ironjaw", "Krun Stonefist",
+          "Bram Fireforge", "Durak Frosthammer", "Torin Brightshield", "Dralin Flamebringer",
+          "Granok Thunderstrike", "Kazrik Starcaller", "Morgrin Stormfist", "Haldor Stonebreaker"
+        ],
+        "Female": [
+          "Helga Stonehammer", "Brunhild Frostbraid", "Astrid Fireaxe", "Ylva Brightforge",
+          "Freya Ironheart", "Ingrid Stormblaze", "Kara Flamebraid", "Solveig Frostforge",
+          "Eira Starforge", "Sigrid Thunderaxe", "Thora Brightbraid", "Ragna Flameweaver",
+          "Hilda Ironveil", "Greta Frostpetal", "Brynna Sunforge", "Kelda Stormkeeper",
+          "Svala Fireheart", "Inga Starbringer", "Torra Flamewarden", "Marta Brightaxe"
+        ]
+      }
+    },
+    "Sci-fi": {
+      "Human": {
+        "Male": [
+          "Ethan Starwalker", "Axel Nova", "Leon Eclipse", "Zane Striker", "Dante Spectrum",
+          "Kai Nebula", "Ryder Quasar", "Julian Vortex", "Victor Zenith", "Orion Flux",
+          "Trey Horizon", "Lucas Astro", "Quinn Stellar", "Miles Eclipse", "Kieran Galaxy",
+          "Jace Nebula", "Theo Stratos", "Noah Comet", "Evan Stellar", "Wyatt Zenith"
+        ],
+        "Female": [
+          "Aria Comet", "Celeste Vega", "Zara Pulsar", "Lyra Orbit", "Nova Stellar",
+          "Rhea Photon", "Elara Gravity", "Nira Holo", "Iona Galax", "Quinn Eclipse",
+          "Stella Zenith", "Iris Starflare", "Talia Orbit", "Venus Quasar", "Luna Stardust",
+          "Mira Galaxy", "Eris Photon", "Selene Eclipse", "Astrid Comet", "Zara Nebula"
+        ]
+      },
+      "Cyborg": {
+        "Male": [
+          "X-01 Terminus", "M-98 Fusion", "Aegis 7", "Kryon Volt", "Z-Alpha Omega",
+          "T-47 Sentinel", "Xyron Phase", "Cade Exo", "Vex Chrome", "Axion Core",
+          "Zerox Circuit", "Cryon Flame", "Neon Bolt", "Zethar Pulse", "Tiber Phase",
+          "Nexus Flux", "Ion Shock", "Thalix Code", "Alpha Core", "Beta Volt"
+        ],
+        "Female": [
+          "C-22 Lyric", "Xenith Nova", "Astra Flux", "Lyric Prime", "Vega Pulse",
+          "Nexus Rho", "Io Zenith", "Eris Quanta", "Stella Matrix", "Nyra Exo",
+          "Nova Grid", "Quara Byte", "Xara Prime", "Selis Circuit", "Ioni Spark",
+          "Theta Flame", "Rhea Bolt", "Talia Core", "Nyx Matrix", "Lirra Volt"
+        ]
+      },
+      "Alien": {
+        "Male": [
+          "Zorgak Prime", "Krullan Nex", "Vorath Zenith", "Graxion Zeta", "Xyrax Starbane",
+          "Tarnok Void", "Loranix Quell", "Thraxus Luminar", "Krenon Orbit", "Jorath Nova",
+          "Xarion Flux", "Qalrak Zenith", "Vorrath Starflare", "Zylox Pulsar", "Thyrak Void",
+          "Nexar Lumina", "Velkor Nova", "Torlan Zenith", "Othar Prime", "Kyrax Shadowflame"
+        ],
+        "Female": [
+          "Xyra Nym", "Vorlix Starseer", "Lyra Xen", "Talanix Qorra", "Zaneth Liora",
+          "Rynex Aria", "Fexira Nova", "Selara Zyr", "Nira Olyn", "Morlix Quanta",
+          "Zalara Voidwalker", "Nyra Lumina", "Kalena Starshadow", "Velis Flux",
+          "Qalera Zenith", "Zorena Pulsar", "Tyris Nova", "Lynara Eclipse", "Vyneth Quorra",
+          "Nexara Stellar"
+        ]
+      }
+    },
+        "Egyptian": {
+          "Human": {
+            "Male": [
+              "Ramses Sunkeeper", "Hor-Aha Falconguard", "Menes Flamebringer", "Seti Shieldbearer",
+              "Kufu Starlight", "Ankhtifi Firewatch", "Djoser Brightheart", "Horemheb Stormwalker",
+              "Neferhotep Ironwill", "Tutmos Frostbane", "Ahmose Sunblade", "Thutmose Firecaster",
+              "Khafre Nightcaller", "Sneferu Moonveil", "Intef Flamebringer", "Amenemhat Frostguard",
+              "Senusret Stormbringer", "Pepi Brightheart", "Sobekhotep Starlight", "Akhenaten Ironwill"
+            ],
+            "Female": [
+              "Nefertari Starcaster", "Cleopatra Lightweaver", "Hatshepsut Flamewarden", "Sobekneferu Sunpetal",
+              "Nitocris Frostveil", "Ankhesenamun Dawnbringer", "Meritaten Nightshadow", "Taweret Skychime",
+              "Mut Spiritblossom", "Tiaa Moonfire", "Tiye Frostwhisper", "Neith Brightpetal", "Bastet Moonshadow",
+              "Isis Sunbringer", "Sekhmet Flameveil", "Hathor Nightbreeze", "Anuket Starseer", "Pakhet Stormwatcher",
+              "Serqet Firekeeper", "Tefnut Skydancer"
+            ]
+          },
+          "Nubian": {
+            "Male": [
+              "Anubis Jackalbane", "Karnak Shadowblade", "Thutmose Nightguard", "Sekhet Stormbringer",
+              "Osiris Fangstrike", "Rahun Flamewarden", "Khorum Starlight", "Rashet Frostshadow",
+              "Bastor Sunspear", "Nekhet Dawnkeeper", "Khufu Starcaster", "Horemakhet Firewatch",
+              "Menkaure Moonveil", "Merneptah Flamecaller", "Shabaka Frostbringer", "Piankhi Stormseer",
+              "Kashta Brightguard", "Taharqa Ironveil", "Alara Firewhisper", "Aspelta Starweaver"
+            ],
+            "Female": [
+              "Bastet Moonwatcher", "Sekhmet Sunspear", "Ankhet Starveil", "Rahat Frostpetal",
+              "Meret Spiritdance", "Sobara Stormlight", "Hathor Nightseer", "Nebet Sunkeeper",
+              "Pakhet Skyshadow", "Khepri Flameveil", "Taweret Moonflame", "Tiaa Starshadow",
+              "Nefret Firepetal", "Mutnofret Nightwhisper", "Sitamun Frostveil", "Henuttawy Flamewarden",
+              "Bentresh Stormbringer", "Ankhesenpepi Brightveil", "Nebemakhet Starwatcher", "Meritamun Skydancer"
+            ]
+          },
+          "Sobek": {
+            "Male": [
+              "Sobek Crocbane", "Rashor Riverfang", "Nehmet Starwater", "Sekhor Tidewalker",
+              "Hathok Fangbringer", "Zerok Waterwarden", "Pharok Sunscale", "Crenek Floodbringer",
+              "Lokhet Ironjaw", "Tidalor Brightscale", "Ranor Wavecaller", "Thalrok Sunfang",
+              "Krenoth Frosttide", "Zanok Tidebreaker", "Vorath Riverwhisper", "Jorak Mooncurrent",
+              "Nexor Flamecrest", "Rothen Stormscale", "Xalor Starwater", "Zerath Floodchime"
+            ],
+            "Female": [
+              "Tethra Moonwater", "Sobira Tidesinger", "Rasha Brightscale", "Nekhura Floodveil",
+              "Serkha Starfang", "Lirak Dawnkeeper", "Hathora Waterwhisper", "Pharasha Flamewave",
+              "Zenithra Skytide", "Sobeka Spiritstream", "Torna Riverveil", "Xylara Moonstream",
+              "Lysara Starcurrent", "Thyra Tidalflame", "Anara Frostwave", "Zerina Dawnwater",
+              "Nyreth Flamecurrent", "Kyris Starstream", "Vynira Nightflood", "Sorena Skycrest"
+            ]
+          }
+        },
+        "Norse": {
+          "Human": {
+            "Male": [
+              "Ragnar Ironside", "Erik Flameheart", "Bjorn Thunderstrike", "Hakon Starcaller",
+              "Viggo Moonblade", "Thorvald Stormbringer", "Leif Frostfang", "Magnus Firebeard",
+              "Ulfric Nightclaw", "Soren Starshadow", "Torvald Brightblade", "Eirik Frostwhisper",
+              "Sigurd Flamebringer", "Harald Stormveil", "Olaf Firecaller", "Rolf Moonshadow",
+              "Sten Frostkeeper", "Viktor Starbringer", "Thorfin Nightblade", "Gudrik Sunveil"
+            ],
+            "Female": [
+              "Freya Stormchime", "Astrid Moonfire", "Ingrid Frostpetal", "Kara Sunbreeze",
+              "Solveig Starblossom", "Ylva Firewhisper", "Eira Nightveil", "Helga Stormbearer",
+              "Thyra Flamewarden", "Liv Frostveil", "Gudrun Sunblossom", "Sigrid Brightblade",
+              "Runa Frostshadow", "Thora Firecaller", "Inga Starweaver", "Yngvild Nightcaster",
+              "Alva Flamekeeper", "Svala Stormveil", "Tora Moonpetal", "Dagmar Skydancer"
+            ]
+          },
+          "Trolls": {
+            "Male": [
+              "Gronk Bonecrusher", "Tharn Stoneclaw", "Brotar Ironjaw", "Kragor Stormcaller",
+              "Zoltar Frostfang", "Tarnok Rockthrower", "Krek Ironfist", "Mornak Thunderbreaker",
+              "Grimrock Frostcaller", "Thorg Bonehammer", "Brodar Flamefang", "Torok Stormbringer",
+              "Thalgrin Frostbreaker", "Granor Nightblade", "Vorok Fireclaw", "Draknar Moonhammer",
+              "Zarnok Stoneveil", "Gromar Starcrusher", "Xerak Flamewarden", "Jorgr Frostcrusher"
+            ],
+            "Female": [
+              "Bratha Stoneweaver", "Zalra Stormblade", "Krekka Bonecaller", "Vorna Frostbane",
+              "Groka Nightveil", "Braga Rockbender", "Thora Ironclad", "Morna Flamewhisper",
+              "Grelka Sunveil", "Kritha Frostbearer", "Jorna Starweaver", "Fyris Nightblossom",
+              "Hodra Stormveil", "Virka Frostpetal", "Dagna Firebringer", "Skorna Moonblaze",
+              "Ylka Starbreaker", "Bryga Flamecaller", "Thyssa Nightwhisper", "Vorla Stormweaver"
+            ]
+          },
+          "Jotnar": {
+            "Male": [
+              "Thrym Icehammer", "Skrymir Stormwalker", "Hrungnir Frostbane", "Ymir Thunderstrike",
+              "Kolbjorn Starcaller", "Vithar Nightshard", "Gimnar Ironveil", "Frostulf Stonebreaker",
+              "Tormund Flamewarden", "Ragnarok Stormbringer", "Volgrim Firekeeper", "Galdor Frostshadow",
+              "Durnir Moonstrike", "Thalrik Stormcaller", "Rorik Brightflame", "Bjarthar Frostclaw",
+              "Skornir Nightstorm", "Haldur Fireveil", "Thalgrin Stonecaller", "Varthor Sunshard"
+            ],
+            "Female": [
+              "Skadi Frostveil", "Eisa Starblossom", "Jora Icewalker", "Helda Nightcaller",
+              "Hryssa Stoneweaver", "Brynja Thunderseer", "Frethra Flameveil", "Thyssa Frostclad",
+              "Vithra Stormwhisper", "Gjaldra Firebloom", "Tharna Moonveil", "Lofnara Frostshadow",
+              "Ydris Flamewarden", "Thyra Brightcaller", "Koltha Nightblossom", "Vindra Starcaster",
+              "Jorinna Stormbreaker", "Nylra Fireblaze", "Skorna Frostbringer", "Fryssa Moonshadow"
+            ]
+          }
+        }
+      }
+      
+  

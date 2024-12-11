@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './tabs/HomeScreen';
 import GeneratorScreen from './tabs/GeneratorScreen';
 import FavoritesScreen from './tabs/FavScreen';
-import { FavoritesProvider } from './context/FavoritesContext';
+import { FavProvider } from './context/FavContext';
 
 type RootStackParamList = {
   Home: undefined;
@@ -16,7 +16,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <FavoritesProvider>
+    <FavProvider>
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen name="Home" component={HomeScreen} />
@@ -24,6 +24,6 @@ export default function App() {
           <Stack.Screen name="Favorites" component={FavoritesScreen} />
         </Stack.Navigator>
       </NavigationContainer>
-    </FavoritesProvider>
+    </FavProvider>
   );
 }

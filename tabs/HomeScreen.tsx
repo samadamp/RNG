@@ -7,52 +7,37 @@ type RootStackParamList = {
   Favorites: undefined;
 };
 
-type HomeScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  'Generator'
->;
+type HomeScreenNavigationProp = StackNavigationProp<RootStackParamList, 'Generator'>;
 
 type Props = {
   navigation: HomeScreenNavigationProp;
 };
 
 const HomeScreen: React.FC<Props> = ({ navigation }) => {
+  const categories = ['Fantasy', 'Sci-fi', 'Egyptian', 'Norse'];
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Categories</Text>
-
-      <View style={styles.categoriesContainer}>
-        <Pressable
-          style={styles.categoryButton}
-          onPress={() => navigation.navigate('Generator', { category: 'Fantasy' })}
-        >
-          <Text style={styles.categoryText}>Fantasy</Text>
-        </Pressable>
-
-        <Pressable
-          style={styles.categoryButton}
-          onPress={() => navigation.navigate('Generator', { category: 'Sci-fi' })}
-        >
-          <Text style={styles.categoryText}>Sci-fi</Text>
-        </Pressable>
-
-        <Pressable
-          style={styles.categoryButton}
-          onPress={() => navigation.navigate('Generator', { category: 'Egyptian' })}
-        >
-          <Text style={styles.categoryText}>Egyptian</Text>
-        </Pressable>
-
-        <Pressable
-          style={styles.categoryButton}
-          onPress={() => navigation.navigate('Generator', { category: 'Norse' })}
-        >
-          <Text style={styles.categoryText}>Norse</Text>
-        </Pressable>
+      <View style={styles.grid}>
+        {categories.map((category) => (
+          <Pressable
+            key={category}
+            style={({ pressed }) => [
+              styles.box,
+              pressed && styles.boxPressed,
+            ]}
+            onPress={() => navigation.navigate('Generator', { category })}
+          >
+            <Text style={styles.boxText}>{category}</Text>
+          </Pressable>
+        ))}
       </View>
-
       <Pressable
-        style={styles.favoritesButton}
+        style={({ pressed }) => [
+          styles.favoritesButton,
+          pressed && styles.favoritesButtonPressed,
+        ]}
         onPress={() => navigation.navigate('Favorites')}
       >
         <Text style={styles.favoritesText}>Favs ❤️</Text>
@@ -67,6 +52,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9fcff',
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 20,
   },
   title: {
     fontSize: 24,
@@ -74,33 +60,37 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     color: '#000',
   },
-  categoriesContainer: {
+  grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    marginBottom: 20,
+    gap: 15,
+    marginBottom: 30,
   },
-  categoryButton: {
+  box: {
     backgroundColor: '#eef5ff',
-    borderRadius: 10,
-    paddingVertical: 15,
-    paddingHorizontal: 25,
-    margin: 10,
-    alignItems: 'center',
     width: 120,
+    height: 120,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 10,
   },
-  categoryText: {
+  boxPressed: {
+    backgroundColor: '#cce7ff',
+  },
+  boxText: {
     fontSize: 16,
     fontWeight: '600',
     color: '#000',
-    textAlign: 'center',
   },
   favoritesButton: {
     backgroundColor: '#eef5ff',
-    borderRadius: 10,
     paddingVertical: 10,
-    paddingHorizontal: 40,
-    alignItems: 'center',
+    paddingHorizontal: 20,
+    borderRadius: 10,
+  },
+  favoritesButtonPressed: {
+    backgroundColor: '#cce7ff',
   },
   favoritesText: {
     fontSize: 16,
