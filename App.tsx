@@ -18,7 +18,33 @@ export default function App() {
   return (
     <FavProvider>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator
+          screenOptions={{
+          
+            cardStyleInterpolator: ({ current, next, layouts }) => {
+              return {
+                cardStyle: {
+                  transform: [
+                    {
+                      translateX: current.progress.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: [layouts.screen.width, 0], // Slide till vänster
+                      }),
+                    },
+                    {
+                      translateX: next
+                        ? next.progress.interpolate({
+                            inputRange: [0, 1],
+                            outputRange: [0, -layouts.screen.width], // Slide till höger för nästa skärm
+                          })
+                        : 0,
+                    },
+                  ],
+                },
+              };
+            },
+          }}
+        >
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Generator" component={GeneratorScreen} />
           <Stack.Screen name="Favorites" component={FavoritesScreen} />
