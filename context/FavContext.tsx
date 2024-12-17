@@ -1,23 +1,23 @@
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
-// Typ för ett namn
+
 type Favorite = {
   name: string;
 };
 
-// Typ för kontextens värden
+
 type FavoritesContextType = {
   favorites: Favorite[];
   addFavorite: (name: string) => void;
   removeFavorite: (name: string) => void;
 };
 
-// Skapa kontexten
+
 const FavoritesContext = createContext<FavoritesContextType | undefined>(
   undefined
 );
 
-// Provider-komponenten
+
 export const FavProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
@@ -40,7 +40,7 @@ export const FavProvider: React.FC<{ children: ReactNode }> = ({
   );
 };
 
-// Hook för att använda kontexten
+
 export const useFavorites = (): FavoritesContextType => {
   const context = useContext(FavoritesContext);
   if (!context) {

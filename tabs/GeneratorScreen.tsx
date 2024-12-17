@@ -1,10 +1,13 @@
+// mina imports
 import React, { useState, useEffect } from 'react';
 import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useFavorites } from '../context/FavContext';
-import namesData from '../data/names.json'; // Direct import of JSON
+import namesData from '../data/names.json';
 
+
+// min navegering
 type RootStackParamList = {
   Generator: { category: string };
   Favorites: undefined;
@@ -26,20 +29,28 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
 
   const { addFavorite, removeFavorite, favorites } = useFavorites();
 
+// mina states
   const [names, setNames] = useState<{ name: string; isFavorite: boolean }[]>([]);
   const [allNames, setAllNames] = useState<
     Record<string, Record<string, Record<string, string[]>>>
   >({});
+
+  
   const [gender, setGender] = useState<'Male' | 'Female'>('Male');
   const [race, setRace] = useState<
     'Human' | 'Elf' | 'Dwarf' | 'Cyborg' | 'Alien' | 'Nubian' | 'Sobek' | 'Trolls' | 'Jotnar'
   >('Human');
+
   const [generatedNames, setGeneratedNames] = useState<Set<string>>(new Set());
 
+
+  // min useEffect
   useEffect(() => {
     setAllNames(namesData);
   }, []);
 
+
+  // generate functionen
   const generateRandomName = () => {
     const availableNames = allNames[category]?.[race]?.[gender] || [];
     const remainingNames = availableNames.filter((name) => !generatedNames.has(name));
@@ -52,10 +63,10 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
     const randomName =
       remainingNames[Math.floor(Math.random() * remainingNames.length)];
 
-    // Add the name to the generated names set
+   
     setGeneratedNames((prev) => new Set(prev).add(randomName));
 
-    // Add the name to the displayed list, maintaining a max of 6 names
+   
     setNames((prev) => {
       if (prev.length >= 6) {
         return [...prev.slice(1), { name: randomName, isFavorite: false }];
@@ -64,6 +75,8 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
     });
   };
 
+  
+//favorites funktionen
   const toggleFavorite = (name: string) => {
     const isCurrentlyFavorite = favorites.some((fav) => fav.name === name);
 
@@ -80,11 +93,13 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
     );
   };
 
+
+  //rendering
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{category}</Text>
 
-      {/* Gender Selector */}
+      
       <View style={styles.genderSelector}>
         <Pressable
           style={[
@@ -120,7 +135,7 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
         </Pressable>
       </View>
 
-      {/* Race Selector */}
+     
       <View style={styles.raceSelector}>
         {[
           'Human',
@@ -149,7 +164,7 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
         ))}
       </View>
 
-      {/* Name List */}
+     
       <View style={styles.nameListContainer}>
         <FlatList
           data={names}
@@ -185,6 +200,8 @@ const GeneratorScreen: React.FC<Props> = ({ route, navigation }) => {
   );
 };
 
+
+//styling 
 const styles = StyleSheet.create({
   container: {
     flex: 1,

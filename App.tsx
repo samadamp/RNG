@@ -28,14 +28,14 @@ export default function App() {
                     {
                       translateX: current.progress.interpolate({
                         inputRange: [0, 1],
-                        outputRange: [layouts.screen.width, 0], // Slide till vänster
+                        outputRange: [layouts.screen.width, 0],
                       }),
                     },
                     {
                       translateX: next
                         ? next.progress.interpolate({
                             inputRange: [0, 1],
-                            outputRange: [0, -layouts.screen.width], // Slide till höger för nästa skärm
+                            outputRange: [0, -layouts.screen.width], 
                           })
                         : 0,
                     },
