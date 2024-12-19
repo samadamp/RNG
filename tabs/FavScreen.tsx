@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, FlatList, Pressable, StyleSheet } from 'react-native';
-import { useFavorites } from '../context/FavContext';
+import useFavorites from '../hooks/useFavorites';
 
 type FavScreenProps = {};
 

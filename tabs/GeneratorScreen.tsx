@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, Pressable, StyleSheet, FlatList } from 'react-native';
 import { RouteProp } from '@react-navigation/native';
 import { StackNavigationProp } from '@react-navigation/stack';
-import { useFavorites } from '../context/FavContext';
+import useFavorites from '../hooks/useFavorites';
 import namesData from '../data/names.json';
 
 
